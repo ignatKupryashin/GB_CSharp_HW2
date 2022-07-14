@@ -45,22 +45,29 @@ void task15()
 {
     Console.WriteLine("Данная программа выводит день недели, который соответствует заданному числу и сообщает является ли он выходным.");
     string[] week = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
-    Console.WriteLine("Введите число от 1 до 7");
+    Console.Write("Введите число от 1 до 7: ");
     int choise = Convert.ToInt32(Console.ReadLine());
     choise--; // уменьшаем введённое число на единицу, чтобы соответствовало индексам массива
-    if (choise == 5 || choise == 6)
+    if (choise >= 0 && choise <= 6)
     {
-        Console.WriteLine(week[choise] + " является выходным днём");
+        if (choise == 5 || choise == 6)
+        {
+            Console.WriteLine(week[choise] + " является выходным днём");
+        }
+        else
+        {
+            Console.WriteLine(week[choise] + " не является выходным днём");
+        }
+        Console.WriteLine(" ");// пустая строка для красоты
     }
     else
     {
-        Console.WriteLine(week[choise] + " не является выходным днём");
-    }
-    Console.WriteLine(" ");// пустая строка для красоты
+        Console.WriteLine("Вы ввели неверное число");
+    };
 }
 
 
 //Запуск всех заданий поочерёдно. При меобходимости, любое задание можно закомментировать.
-task10();
-task13();
+/* task10();
+task13(); */
 task15();
